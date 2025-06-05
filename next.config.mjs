@@ -1,25 +1,26 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    async headers(){
-        return[
+    output: 'standalone', // Add this line
+    async headers() {
+        return [
             {
                 source: "/api/(.*)",
-                headers:[
+                headers: [
                     {
-                        key:"Access-Control-Allow-Origin",
+                        key: "Access-Control-Allow-Origin",
                         // for development to everyone
                         value: "*"
                     },
                     {
-                        key:"Access-Control-Allow-Methods",
+                        key: "Access-Control-Allow-Methods",
                         value: "GET, POST, PUT, DELETE, OPTIONS"
                     },
                     {
-                        key:"Access-Control-Allow-Headers",
+                        key: "Access-Control-Allow-Headers",
                         value: "Content-Type, Authorization"
                     },
                     {
-                        key:"Content-Range",
+                        key: "Content-Range",
                         value: "bytes : 0-9/*"
                     },
                 ],
