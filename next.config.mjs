@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'standalone', // Add this line
+    output: 'standalone', 
+    compress: true,
+    productionBrowserSourceMaps: false,
     async headers() {
         return [
             {
